@@ -11,8 +11,8 @@ const DeviceList = ({devices}) => {
 
   return (
     <div>
-      <table className="table">
-        <thead>
+      <table className="table table-sm table-striped">
+        <thead className="thead-inverse">
           <tr>
             <th>Device MAC</th>
             <th>Serial No.</th>
