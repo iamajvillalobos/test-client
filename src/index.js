@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Client from './Client.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { devices: [] }
+
+    Client.getAllDevices((devices) => {
+      this.setState({devices: devices});
+    });
+  }
+
   render() {
     return (
       <div>
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>Device MAC</th>
+              <th>Serial No.</th>
+              <th>Color</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Building</th>
+              <th>Level</th>
+              <th>Device Threshold</th>
             </tr>
           </thead>
           <tbody>
