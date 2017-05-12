@@ -1,6 +1,14 @@
 import React from 'react';
+import DeviceListItem from './device_list_item.js';
 
 const DeviceList = ({devices}) => {
+  const deviceItems = devices.map((device) => {
+    return <DeviceListItem
+      key={device.id}
+      device={device}
+    />
+  });
+
   return (
     <div>
       <table className="table">
@@ -17,24 +25,7 @@ const DeviceList = ({devices}) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {deviceItems}
         </tbody>
       </table>
     </div>
