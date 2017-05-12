@@ -18,6 +18,7 @@ function checkStatus(response) {
 
 function parseJSON(response) {
   return response.json();
+  return response.json().then(response);
 }
 
 const Client = { getAllDevices };

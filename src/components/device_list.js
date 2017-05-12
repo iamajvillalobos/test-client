@@ -5,7 +5,7 @@ const DeviceList = ({devices}) => {
   const deviceItems = devices.map((device) => {
     return <DeviceListItem
       key={device.id}
-      device={device}
+      device={device.attributes}
     />
   });
 

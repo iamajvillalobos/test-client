@@ -10,7 +10,11 @@ class App extends Component {
     this.state = { devices: [] }
 
     Client.getAllDevices((devices) => {
-      this.setState({devices: devices});
+      if (!devices) {
+        this.setState({devices: []});
+      }
+
+      this.setState({devices: devices.data});
     });
   }
 
