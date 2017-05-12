@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DeviceListItem = ({device}) => {
-  console.log(device);
   return (
     <tr>
       <td>{device.device_mac}</td>

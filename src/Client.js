@@ -1,5 +1,5 @@
 function getAllDevices(callback) {
-  return fetch(`/api/v1/devices`, {
+  return fetch(`https://datalink-test-api.herokuapp.com/api/v1/devices`, {
     accept: 'application/json',
   }).then(checkStatus)
     .then(parseJSON)
